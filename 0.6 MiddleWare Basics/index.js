@@ -32,7 +32,7 @@ function isOldenoughMidleWare(req,res,next){ //reason next it is not last call i
 }
 
 // for adding in every routes this is used 
-// app.use(isOldenoughMidleWare); //make sure to write is above the whole all ckecks. => order is also matter 
+app.use(isOldenoughMidleWare); //make sure to write is above the whole all ckecks. => order is also matter 
 // Either defined them inside the routes ==> ki hua app.use(midleware kaha use kare phele ya baad me)
 
 app.get("/ride1",isOldenoughMidleWare, function(req,res){
