@@ -3,7 +3,7 @@ const app = express();
 
 const port = 3000;
 
-// /sum/:a/:b if the user is sending th edynamic routes
+// /sum/:a/:b if the user is sending the dynamic routes
 // www.google.com/add/:a/:b
 
 app.get("/sum", (req, res) => {
