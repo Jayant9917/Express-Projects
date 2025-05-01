@@ -18,6 +18,19 @@ function authenticateAPIKey(req, res, next) {
     }
 }
 
+app.post('/data', authenticateAPIKey, (req, res) => {
+    const { name, age } = req.body;
+
+    if (!name || !age) {
+        return res.status(400).json({ message: 'Missing name or age in body' });
+    }
+
+    res.status(200).json({
+        message: 'Data received successfully',
+        data: { name, age }
+    });
+});
+
 app.get('/', (req, res) => {
     res.status(200).json({ message: 'Access granted' });
 });
